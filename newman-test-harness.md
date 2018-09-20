@@ -23,13 +23,15 @@ Request Test Harness using [Newman (from Postman)](https://www.getpostman.com/do
 Local Machine prerequisites:
  - [AzureCLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
  - Bash
- 
-Login to Azure (`az login`) and do the following steps to generate reports:
 
-1. Modify the environment variables in the `/.env.sample` file, and configure them to your specific environment.
+Clone the repo
+
+1. Login to Azure (`az login`).
+2. Clone the repo.
+3. Modify the environment variables in the `/.env.sample` file, and configure them to your specific environment.
     - The important ones are `AZ_RESOURCE_GROUP` and `AZ_EXPIRY`. The others can be arbitrary names.
-2. Save that `.env.sample` file as `.env` (which is `.gitignore`-d in the repo, so it won't be accidentally committed).
-3. Run `sh deployHarness.sh`. This shell script will (with the settings provided in `.env`):
+4. Save that `.env.sample` file as `.env` (which is `.gitignore`-d in the repo, so it won't be accidentally committed).
+5. Run `sh deployHarness.sh`. This shell script will (with the settings provided in `.env`):
     - Create an Azure storage account and container
     - Upload the collection and environment files in `/collections` and `/environments` (see below for more info)
     - Upload the necessary report generation scripts
