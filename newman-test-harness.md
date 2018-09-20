@@ -1,5 +1,7 @@
 # Azure + Newman: A Test Harness
 
+![newman.png](newman.png)
+
 Let’s start with the problem. We have a big application that we want to break up into smaller more manageable pieces; decompose the monolith, if you will. To do this, we'll be creating microservices on Kubernetes. Understanding this new system from your customers’ perspective is a good thing. Our customer in this scenario will be consuming APIs. We'd like to provide a nice gateway to the data and bolt on some security. To do this we'll use an API Gateway and a WAF.
 
 We'd like to understand how each component of the system affects response time. To accomplish this, we'll create three environments:
