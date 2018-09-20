@@ -2,6 +2,8 @@
 
 This workstream focussed on building tools to measure latency of the services hosted on AKS cluster. The reports created by harness would be used to compare different network configuration of the CTP infrastruture.
 
+Code in repo: [iphilpot/newman-test-harness](https://github.com/iphilpot/newman-test-harness)
+
 (FROM README:)
 
 This is used to test the response times of a given API environment.
@@ -35,3 +37,4 @@ The **`/environments`** folder should contain [Postman environments](https://www
 The `newman.sh` script will _watch_ for those collections/environments files uploaded to the storage account. When files are uploaded, reports will be regenerated, which you can view by reloading that same link (e.g., `http://123.123.123.123/reports.html`).
 
 The general idea is that each collection in `/collections` will contain links to the endpoints you want to test, with environment variables such as `https://{{host}}/some/api/endpoint`. Each environment file in `/environments` will be used to populate that `{{host}}` variable, and generate a report for each environment. 
+
