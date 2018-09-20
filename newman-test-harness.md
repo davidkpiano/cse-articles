@@ -16,13 +16,15 @@ Azure will run our different environments. We'll have a Kubernetes cluster creat
 
 The code to setup our test harness is here: [iphilpot/newman-test-harness](https://github.com/iphilpot/newman-test-harness)
 
-Request Test Harness using [Newman (from Postman)](https://www.getpostman.com/docs/v6/postman/collection_runs/command_line_integration_with_newman). This will deploy a VM and a storage account to the specified resource group.
 
 # Getting started
+
+This will only deploy the request Test Harness using [Newman (from Postman)](https://www.getpostman.com/docs/v6/postman/collection_runs/command_line_integration_with_newman). It creates a VM and a storage account to the specified resource group. This does not create the AKS instance or a microservice for testing against.
 
 Local Machine prerequisites:
  - [AzureCLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
  - Bash
+ - Git
 
 1. Login to Azure (`az login`).
 2. Clone the repo.
