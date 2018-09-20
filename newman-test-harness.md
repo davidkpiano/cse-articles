@@ -1,12 +1,20 @@
 # Azure + Newman: A Test Harness
 
-This workstream focussed on building tools to measure latency of the services hosted on AKS cluster. The reports created by harness would be used to compare different network configuration of the CTP infrastruture.
+Let’s start with the problem. We have a big application that we want to break up into smaller more manageable pieces, decompose the monolith if you will. To do this we'll be creating microservices on kubernetes. Understanding this new system from your customers perspective is a good thing. Our customer in this scenario will be consuming APIs. We'd like to provide a nice gateway to the data and bolt on some security. To do this we'll use an API Gateway and a WAF.
 
-Code in repo: [iphilpot/newman-test-harness](https://github.com/iphilpot/newman-test-harness)
+We'd like to understand how each component of the system affects response time. We'd like to create three envrionments:
 
-(FROM README:)
+Kubernetes => Microservice
+Kubernetes => API Gateway => Microservice
+Kubernetes => WAF => API Gateway => Micrservice
 
-This is used to test the response times of a given API environment.
+Now to understand the difference in response time each layer adds we need a tool that times the request/response call. Postman sounds like the logical tool, but it's a GUI tool and not suitable for automating in a CI/CD environement. That's where Newman comes in. Newman is the CLI version of Postman and maintains feature parity with it's GUI counter part.
+
+There is one other piece to this equation. We'd like to test the request/response time on the local network to prevent the interwebs from adding latency. 
+
+Azure will run our different environments. We'll have a Kubernetes cluster created using Azure Kubernetes Sercice (AKS). This creates a VNet. On this VNet we'll also create a VM. This VM will run newman against our Different AKS environments stated above. 
+
+The code to setup our test harness is here: [iphilpot/newman-test-harness](https://github.com/iphilpot/newman-test-harness)
 
 Request Test Harness using [Newman (from Postman)](https://www.getpostman.com/docs/v6/postman/collection_runs/command_line_integration_with_newman). This will deploy a VM and a storage account to the specified resource group.
 
