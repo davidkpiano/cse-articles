@@ -21,10 +21,12 @@ The code to setup our test harness is here: [iphilpot/newman-test-harness](https
 
 This will only deploy the request Test Harness using [Newman (from Postman)](https://www.getpostman.com/docs/v6/postman/collection_runs/command_line_integration_with_newman). It creates a VM and a storage account to the specified resource group/vnet. This does not create the AKS instance or a microservice for testing against.
 
-Local Machine prerequisites:
+## Local Machine prerequisites
  - [AzureCLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
  - Bash
  - Git
+
+## Steps
 
 1. Login to Azure (`az login`).
 2. Clone the repo.
