@@ -24,8 +24,6 @@ Local Machine prerequisites:
  - [AzureCLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
  - Bash
 
-Clone the repo
-
 1. Login to Azure (`az login`).
 2. Clone the repo.
 3. Modify the environment variables in the `/.env.sample` file, and configure them to your specific environment.
