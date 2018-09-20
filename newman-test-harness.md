@@ -6,7 +6,7 @@ We'd like to understand how each component of the system affects response time. 
 
 - Kubernetes => Microservice
 - Kubernetes => API Gateway => Microservice
-- Kubernetes => WAF => API Gateway => Microservice
+- WAF => Kubernetes => WAF => API Gateway => Microservice
 
 To understand the difference in response time each layer adds, we need a tool that times the request/response call. [Postman](https://www.getpostman.com/) sounds like a logical tool to use, but it's GUI based and not suitable for automating in a CI/CD environment. That's where [Newman (from Postman)](https://www.getpostman.com/docs/v6/postman/collection_runs/command_line_integration_with_newman) comes in. Newman is the CLI version of Postman and maintains feature parity with it's GUI counter part.
 
